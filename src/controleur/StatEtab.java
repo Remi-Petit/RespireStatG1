@@ -1,7 +1,7 @@
 package controleur;
 
 import java.util.ArrayList;
-
+import java.util.Collections;
 import model.Etablissement;
 
 /**
@@ -130,8 +130,18 @@ public class StatEtab {
 	 */
 	public static Etablissement getPlusPolluantNO2(ArrayList<Etablissement> l, int annee) {
 		//TODO Compléter getPlusPolluantNO2 
-		return null;
+		double max = 0;
+		Etablissement plus = null;
+		for(Etablissement e : l) {
+			double a = e.getPollutionNO2(annee); 
+			if(a>max) {
+				plus = e;
+			}
+		}
+		return plus;
 	}
+
+
 	/**
 	 * Trouve l'établissement le plus polluant au PM10 sur une année
 	 * @param l La liste des établissements
@@ -141,7 +151,15 @@ public class StatEtab {
 	 */
 	public static Etablissement getPlusPolluantPM10(ArrayList<Etablissement> l, int annee) {
 		//TODO Compléter getPlusPolluantPM10 
-		return null;
+		double max = 0;
+		Etablissement plus = null;
+		for(Etablissement e : l) {
+			double a = e.getPollutionPM10(annee); 
+			if(a>max) {
+				plus = e;
+			}
+		}
+		return plus;
 	}
 	/**
 	 * Trouve l'établissement le plus polluant au PM25 sur une année
@@ -152,6 +170,14 @@ public class StatEtab {
 	 */
 	public static Etablissement getPlusPolluantPM25(ArrayList<Etablissement> l, int annee) {
 		//TODO Compléter getPlusPolluantPM25 
-		return null;
+		double max = 0;
+		Etablissement plus = null;
+		for(Etablissement e : l) {
+			double a = e.getPollutionPM25(annee); 
+			if(a>max) {
+				plus = e;
+			}
+		}
+		return plus;
 	}
 }

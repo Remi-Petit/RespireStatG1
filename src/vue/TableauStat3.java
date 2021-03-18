@@ -14,13 +14,12 @@ public class TableauStat3 extends AbstractTableModel{
 	private final HashMap<String, Double> moyenneDepartementPM10;
 	private final HashMap<String, Double> moyenneDepartementPM25;
 	
+	//TODO Créer le constructeur
 	public TableauStat3(HashMap<String, Double> moyenneDepartementNO2, HashMap<String, Double> moyenneDepartementPM10, HashMap<String, Double> moyenneDepartementPM25) {
 		this.moyenneDepartementNO2 = moyenneDepartementNO2;
 		this.moyenneDepartementPM10 = moyenneDepartementPM10;
 		this.moyenneDepartementPM25 = moyenneDepartementPM25;
 	}
-	
-	//TODO Créer le constructeur
 	
 	@Override
 	public int getColumnCount() {
@@ -47,7 +46,7 @@ public class TableauStat3 extends AbstractTableModel{
 		//return null;
 		switch (columnIndex) {
 		case 0:
-			return ConvertCSV.listeVilles.get(rowIndex);
+			return ConvertCSV.listeDepartements.get(rowIndex);
 		case 1:
 			return moyenneDepartementNO2.get(ConvertCSV.listeDepartements.get(rowIndex));
 

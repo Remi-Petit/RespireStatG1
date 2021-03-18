@@ -146,10 +146,10 @@ public class FenetrePrincipale extends JFrame{
 		HashMap<String, Double> moyenneDepartementPM10 = new HashMap<String, Double>();
 		HashMap<String, Double> moyenneDepartementPM25 = new HashMap<String, Double>();
 		//TODO Parcourir la liste des départements pour mettre dans les 3 HashMap le département (clé) et la moyenne de chaque polluant (valeur)
-		for(String lieu : ConvertCSV.listeDepartements) {
-			moyenneDepartementNO2.put(lieu, StatEtab.getMoyennePolluantNO2Dpt(ConvertCSV.listeEtab, lieu, 2017));
-			moyenneDepartementPM10.put(lieu, StatEtab.getMoyennePolluantPM10Dpt(ConvertCSV.listeEtab, lieu, 2017));
-			moyenneDepartementPM25.put(lieu, StatEtab.getMoyennePolluantPM25Dpt(ConvertCSV.listeEtab, lieu, 2017));
+		for(String departement : ConvertCSV.listeDepartements) {
+			moyenneDepartementNO2.put(departement, StatEtab.getMoyennePolluantNO2Dpt(ConvertCSV.listeEtab, departement, 2017));
+			moyenneDepartementPM10.put(departement, StatEtab.getMoyennePolluantPM10Dpt(ConvertCSV.listeEtab, departement, 2017));
+			moyenneDepartementPM25.put(departement, StatEtab.getMoyennePolluantPM25Dpt(ConvertCSV.listeEtab, departement, 2017));
 		}
 		//TODO Créer un objet TableauStat3 dans lequel vous met
 
@@ -166,5 +166,6 @@ public class FenetrePrincipale extends JFrame{
 		onglets.addTab("Moyenne par d�partement 2017", onglet4);
 				
 		panel.add(onglets);
+		return panel;
 	}
 }
