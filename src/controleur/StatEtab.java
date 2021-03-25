@@ -129,7 +129,6 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantNO2(ArrayList<Etablissement> l, int annee) {
-		//TODO Compléter getPlusPolluantNO2 
 		double max = 0;
 		Etablissement plus = null;
 		for(Etablissement e : l) {
@@ -150,7 +149,6 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantPM10(ArrayList<Etablissement> l, int annee) {
-		//TODO Compléter getPlusPolluantPM10 
 		double max = 0;
 		Etablissement plus = null;
 		for(Etablissement e : l) {
@@ -169,7 +167,6 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantPM25(ArrayList<Etablissement> l, int annee) {
-		//TODO Compléter getPlusPolluantPM25 
 		double max = 0;
 		Etablissement plus = null;
 		for(Etablissement e : l) {

@@ -138,27 +138,21 @@ public class FenetrePrincipale extends JFrame{
 		onglets.addTab("Moyenne par ville 2017", onglet3);
 
 		//ONGLET 4
-		//TODO Faire l'onglet 4 : il ressemble beaucoup à l'onglet 3 !
+		
 		JPanel onglet4 = new JPanel();
-				
-		//TODO Créer les 3 HashMap
+		
 		HashMap<String, Double> moyenneDepartementNO2 = new HashMap<String, Double>();
 		HashMap<String, Double> moyenneDepartementPM10 = new HashMap<String, Double>();
 		HashMap<String, Double> moyenneDepartementPM25 = new HashMap<String, Double>();
-		//TODO Parcourir la liste des départements pour mettre dans les 3 HashMap le département (clé) et la moyenne de chaque polluant (valeur)
 		for(String departement : ConvertCSV.listeDepartements) {
 			moyenneDepartementNO2.put(departement, StatEtab.getMoyennePolluantNO2Dpt(ConvertCSV.listeEtab, departement, 2017));
 			moyenneDepartementPM10.put(departement, StatEtab.getMoyennePolluantPM10Dpt(ConvertCSV.listeEtab, departement, 2017));
 			moyenneDepartementPM25.put(departement, StatEtab.getMoyennePolluantPM25Dpt(ConvertCSV.listeEtab, departement, 2017));
 		}
-		//TODO Créer un objet TableauStat3 dans lequel vous met
 
 		TableauStat3 tab3 = new TableauStat3(moyenneDepartementNO2, moyenneDepartementPM10, moyenneDepartementPM25);
 				
-		//TODO Décommenter les lignes suivantes
-		//tableau de l'onglet 3
 		table = new JTable(tab3);
-		//d�filement horizontal ou vertical de la fen�tre
 		spane = new JScrollPane(table);
 		
 		
@@ -167,5 +161,16 @@ public class FenetrePrincipale extends JFrame{
 				
 		panel.add(onglets);
 		return panel;
+		
+		// ONGLET 5
+		
+		/*JPanel onglet5 = new JPanel();
+		
+		onglet5.add(spane);
+		onglets.addTab("Moyenne etablissement les plus pollu�s", onglet5);
+		
+		panel.add(onglets);
+		return panel;*/
+		
 	}
 }
