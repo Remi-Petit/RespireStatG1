@@ -1,7 +1,7 @@
 package controleur;
 
 import java.util.ArrayList;
-import java.util.Collections;
+
 import model.Etablissement;
 
 /**
@@ -114,7 +114,7 @@ public class StatEtab {
 	public static double getMoyennePolluantPM25Ville(ArrayList<Etablissement> l, String ville, int annee) {
 		double moy = 0;
 		for(Etablissement e : l) {
-			if(e.getLieu().getVille().equals(ville)) {
+			if(e.getLieu().getVille().equals(e)) {
 				moy+=e.getPollutionPM25(annee);
 			}
 		}
@@ -129,19 +129,15 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantNO2(ArrayList<Etablissement> l, int annee) {
-		//TODO Compléter getPlusPolluantNO2 
-		double max = 0;
 		Etablissement plus = null;
-		for(Etablissement e : l) {
-			double a = e.getPollutionNO2(annee); 
-			if(a>max) {
+		double pollution = 0;
+		for (Etablissement e : l) {
+			if(pollution<e.getPollutionNO2(annee)) {
 				plus = e;
 			}
 		}
 		return plus;
 	}
-
-
 	/**
 	 * Trouve l'établissement le plus polluant au PM10 sur une année
 	 * @param l La liste des établissements
@@ -150,12 +146,10 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantPM10(ArrayList<Etablissement> l, int annee) {
-		//TODO Compléter getPlusPolluantPM10 
-		double max = 0;
 		Etablissement plus = null;
-		for(Etablissement e : l) {
-			double a = e.getPollutionPM10(annee); 
-			if(a>max) {
+		double pollution = 0;
+		for (Etablissement e : l) {
+			if(pollution<e.getPollutionPM10(annee)) {
 				plus = e;
 			}
 		}
@@ -169,12 +163,10 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantPM25(ArrayList<Etablissement> l, int annee) {
-		//TODO Compléter getPlusPolluantPM25 
-		double max = 0;
 		Etablissement plus = null;
-		for(Etablissement e : l) {
-			double a = e.getPollutionPM25(annee); 
-			if(a>max) {
+		double pollution = 0;
+		for (Etablissement e : l) {
+			if(pollution<e.getPollutionPM25(annee)) {
 				plus = e;
 			}
 		}
