@@ -129,15 +129,26 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantNO2(ArrayList<Etablissement> l, int annee) {
+<<<<<<< HEAD
 		Etablissement plus = null;
 		double pollution = 0;
 		for (Etablissement e : l) {
 			if(pollution<e.getPollutionNO2(annee)) {
+=======
+		//TODO Compléter getPlusPolluantNO2 
+		Etablissement plus = l.get(0);
+		for(Etablissement e : l) {
+			if(e.getPollutionNO2(annee)>plus.getPollutionNO2(annee)) {
+>>>>>>> b28a7fff8c8ebdbed91da82b936099b39ea3791c
 				plus = e;
 			}
 		}
 		return plus;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> b28a7fff8c8ebdbed91da82b936099b39ea3791c
 	/**
 	 * Trouve l'établissement le plus polluant au PM10 sur une année
 	 * @param l La liste des établissements
@@ -146,10 +157,17 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantPM10(ArrayList<Etablissement> l, int annee) {
+<<<<<<< HEAD
 		Etablissement plus = null;
 		double pollution = 0;
 		for (Etablissement e : l) {
 			if(pollution<e.getPollutionPM10(annee)) {
+=======
+		//TODO Compléter getPlusPolluantPM10 
+		Etablissement plus = l.get(0);
+		for(Etablissement e : l) {
+			if(e.getPollutionPM10(annee)>plus.getPollutionPM10(annee)) {
+>>>>>>> b28a7fff8c8ebdbed91da82b936099b39ea3791c
 				plus = e;
 			}
 		}
@@ -163,10 +181,18 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantPM25(ArrayList<Etablissement> l, int annee) {
+<<<<<<< HEAD
 		Etablissement plus = null;
 		double pollution = 0;
 		for (Etablissement e : l) {
 			if(pollution<e.getPollutionPM25(annee)) {
+=======
+		//TODO Compléter getPlusPolluantPM25 
+		double max = 0;
+		Etablissement plus = l.get(0);
+		for(Etablissement e : l) {
+			if(e.getPollutionPM25(annee)>plus.getPollutionPM25(annee)) {
+>>>>>>> b28a7fff8c8ebdbed91da82b936099b39ea3791c
 				plus = e;
 			}
 		}
