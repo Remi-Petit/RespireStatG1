@@ -1,6 +1,7 @@
 package controleur;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import model.Etablissement;
 
 /**
@@ -163,6 +164,39 @@ public class StatEtab {
 	 * Flavie Tonon
 	 */
 	public static Etablissement getPlusPolluantPM25(ArrayList<Etablissement> l, int annee) {
+		//TODO Compléter getPlusPolluantPM25 
+		Etablissement plus = l.get(0);
+		for(Etablissement e : l) {
+			if(e.getPollutionPM25(annee)>plus.getPollutionPM25(annee)) {
+				plus = e;
+			}
+		}
+		return plus;
+	}
+	
+	public static Etablissement getEvolutionPolluantNO2(ArrayList<Etablissement> l, int annee) {
+		//TODO Compléter getPlusPolluantPM25 
+		Etablissement moyenneTout = l.get(0);
+		for(Etablissement e : l) {
+			if(e.getPollutionNO2(annee)>moyenneTout.getPollutionNO2(annee)) {
+				moyenneTout = e;
+			}
+		}
+		return moyenneTout;
+	}
+	
+	public static Etablissement getEvolutionPolluantPM10(ArrayList<Etablissement> l, int annee) {
+		//TODO Compléter getPlusPolluantPM25 
+		Etablissement plus = l.get(0);
+		for(Etablissement e : l) {
+			if(e.getPollutionPM25(annee)>plus.getPollutionPM25(annee)) {
+				plus = e;
+			}
+		}
+		return plus;
+	}
+	
+	public static Etablissement getEvolutionPolluantPM25(ArrayList<Etablissement> l, int annee) {
 		//TODO Compléter getPlusPolluantPM25 
 		Etablissement plus = l.get(0);
 		for(Etablissement e : l) {

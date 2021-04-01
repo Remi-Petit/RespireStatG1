@@ -3,6 +3,7 @@ package model;
 public class CoordGPS {
 	private double latitude;
 	private double longitude;
+	final int R = 6371;
 	
 	public CoordGPS(String geometry) {
 		this(getLatitudeFromGeometry(geometry),getLongitudeFromGeometry(geometry));
@@ -23,6 +24,7 @@ public class CoordGPS {
 	private static double getLongitudeFromGeometry(String geometry) {
 		return Double.parseDouble(extractLatLongFromGeometry(geometry)[1]);
 	}
+ 
 	public double getLatitude() {
 		return latitude;
 	}

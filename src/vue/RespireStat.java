@@ -1,9 +1,7 @@
 package vue;
 
-
 import javax.swing.SwingUtilities;
 
-import controleur.ConvertCSV;
 public class RespireStat {
 	public static void main(String[] args) {		
 		//ConvertCSV.chargerEtablissements("ecoles-creches-idf.csv");

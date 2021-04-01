@@ -47,8 +47,8 @@ public class TableauStat1 extends AbstractTableModel{
 				return "Ville";
 
 			case 3:
-				// DÃ©partement
-				return "DÃ©partement";
+				// Département
+				return "Département";
 
 			case 4:
 				// PM25
@@ -74,7 +74,7 @@ public class TableauStat1 extends AbstractTableModel{
 				return etabs[columnIndex-1].getLieu().getVille();
 
 			case 3:
-				// DÃ©partement
+				// Département
 				return etabs[columnIndex-1].getLieu().getDepartement();
 
 			case 4:

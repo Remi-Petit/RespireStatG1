@@ -8,13 +8,13 @@ import controleur.ConvertCSV;
 
 public class TableauStat3 extends AbstractTableModel{
 	private static final long serialVersionUID = 1L;
-	//TODO CrÃ©er les attributs
+	//TODO Créer les attributs
 	private final String[] entetes = { "Departements", "NO2", "PM10", "PM25" };	
 	private final HashMap<String, Double> moyenneDepartementNO2;
 	private final HashMap<String, Double> moyenneDepartementPM10;
 	private final HashMap<String, Double> moyenneDepartementPM25;
 	
-	//TODO CrÃ©er le constructeur
+	//TODO Créer le constructeur
 	public TableauStat3(HashMap<String, Double> moyenneDepartementNO2, HashMap<String, Double> moyenneDepartementPM10, HashMap<String, Double> moyenneDepartementPM25) {
 		this.moyenneDepartementNO2 = moyenneDepartementNO2;
 		this.moyenneDepartementPM10 = moyenneDepartementPM10;
@@ -23,26 +23,26 @@ public class TableauStat3 extends AbstractTableModel{
 	
 	@Override
 	public int getColumnCount() {
-		// TODO ComplÃ©ter getColumnCount
+		// TODO Compléter getColumnCount
 		return entetes.length;
 	}
 	@Override
 	public String getColumnName(int columnIndex) {
-		// TODO ComplÃ©ter getColumnName
+		// TODO Compléter getColumnName
 		//return "";
 		return entetes[columnIndex];
 	}
 
 	@Override
 	public int getRowCount() {
-		// TODO ComplÃ©ter getRowCount
+		// TODO Compléter getRowCount
 		return ConvertCSV.listeDepartements.size();
 	}
 	
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		// TODO ComplÃ©ter getValueAt
+		// TODO Compléter getValueAt
 		//return null;
 		switch (columnIndex) {
 		case 0:

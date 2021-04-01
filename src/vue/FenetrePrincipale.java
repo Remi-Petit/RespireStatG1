@@ -138,7 +138,7 @@ public class FenetrePrincipale extends JFrame{
 		onglets.addTab("Moyenne par ville 2017", onglet3);
 
 		//ONGLET 4
-		//TODO Faire l'onglet 4 : il ressemble beaucoup Ã  l'onglet 3 !
+		//TODO Faire l'onglet 4 : il ressemble beaucoup Ã  l'onglet 3 !
 		JPanel onglet4 = new JPanel();
 				
 		//TODO CrÃ©er les 3 HashMap
@@ -164,6 +164,33 @@ public class FenetrePrincipale extends JFrame{
 		
 		onglet4.add(spane);
 		onglets.addTab("Moyenne par département 2017", onglet4);
+		
+		//ONGLET 5
+				//TODO Faire l'onglet 4 : il ressemble beaucoup Ã  l'onglet 3 !
+				JPanel onglet5 = new JPanel();
+						
+				//TODO CrÃ©er les 3 HashMap
+				HashMap<String, Double> evolutionDepartementNO2 = new HashMap<String, Double>();
+				HashMap<String, Double> evolutionDepartementPM10 = new HashMap<String, Double>();
+				HashMap<String, Double> evolutionDepartementPM25 = new HashMap<String, Double>();
+				//TODO Parcourir la liste des dÃ©partements pour mettre dans les 3 HashMap le département (clé) et la moyenne de chaque polluant (valeur)
+				for(String departement : ConvertCSV.listeDepartements) {
+					evolutionDepartementNO2.put(departement, StatEtab.getMoyennePolluantNO2Dpt(ConvertCSV.listeEtab, departement, 2017));
+					evolutionDepartementPM10.put(departement, StatEtab.getMoyennePolluantPM10Dpt(ConvertCSV.listeEtab, departement, 2017));
+					evolutionDepartementPM25.put(departement, StatEtab.getMoyennePolluantPM25Dpt(ConvertCSV.listeEtab, departement, 2017));
+				}
+				//TODO CrÃ©er un objet TableauStat3 dans lequel vous met
+				
+				TableauStat4 tab4 = new TableauStat4(evolutionDepartementNO2, evolutionDepartementPM10, evolutionDepartementPM25);
+						
+				//TODO DÃ©commenter les lignes suivantes
+				//tableau de l'onglet 3
+				table = new JTable(tab4);
+				//défilement horizontal ou vertical de la fenêtre
+				spane = new JScrollPane(table);
+				
+				onglet5.add(spane);
+				onglets.addTab("Évolution 2017", onglet5);
 				
 		panel.add(onglets);
 		return panel;
